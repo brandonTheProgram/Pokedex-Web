@@ -12,7 +12,10 @@ The information and images are © 2022 Pokémon. © 1995–2022 Nintendo/Creatur
 * The application uses express for the backend portion.
 * The application uses HTML, CSS, and JavaScript for the front end.
 
-# Application Key Requirements
+# To Use
+## Web Server
+* The program is hosted on Heroku and can be accessed via the [link](https://pokedex-brandon.herokuapp.com/).
+## Local Server
 * In order to run Pokedex, you need to have [Node.js](https://nodejs.org/en/download/) installed on your machine.
 * The project is best ran on Google Chrome and runs on port 3500 when downloaded. You change the port number on app.js.
 
