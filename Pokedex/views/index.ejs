@@ -1,0 +1,278 @@
+<!-- Header Start -->
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="/icons/PokedexImg.jpg" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Pokedex">
+    </div>
+
+    <div class="col-12 col-lg-6">
+
+        <h1 class="display-5 fw-bold mb-3">Welcome to the world of Pokemon</h1>
+        <p class="lead">
+            Explore the the vast world of Pokemon by finding and selecting any Pokemon to bring up their information and stats.
+        </p>
+
+    </div>
+
+</div>
+<!-- Header End -->
+
+<!-- Regions Start -->
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+    <% if(regions != '') { %>
+        <% regions.forEach(function(region, index) { %>
+            <a href="/region/<%- region.name %>" class="col text-center region__link">
+                <div class="region__img shadow">
+                    <img src="/icons/<%- region.image %>" width="220" height="200"  alt=<%- region.name %> loading="lazy">
+                </div>
+                <div class="pt-1"><%- region.name %> Region</div>
+            </a>
+        <% }) %>
+    <% } %>
+
+    <a href="/regions" class="col text-center region__link">
+        <div class="region__img shadow">
+            <img src="/icons/ViewAll.png" width="220" height="200"  alt="View All" loading="lazy">
+        </div>
+        <div class="pt-1">View All</div>
+    </a>
+
+</div>
+<!-- Regions End -->
+
+<!-- Games Start -->
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+    <% if(games != '') { %>
+        <% games.forEach(function(game, index) { %>
+            <a href="/game/<%- game.names %>" class="col text-center region__link">
+                <div class="region__img shadow">
+                    <img src="/icons/<%- game.image %>" width="220" height="200"  alt=<%- game.names %> loading="lazy">
+                </div>
+                <div class="pt-1">Pokemon <%- game.names %></div>
+            </a>
+        <% }) %>
+    <% } %>
+
+    <a href="/games" class="col text-center region__link">
+        <div class="region__img shadow">
+            <img src="/icons/ViewAll.png" width="220" height="200"  alt="View All" loading="lazy">
+        </div>
+        <div class="pt-1">View All</div>
+    </a>
+
+</div>
+<!-- Games End -->
+
+<!-- Lastest Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Latest Pokemon</h2>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(latest != '') { %>
+            <% latest.forEach(function(latestPokemon, index) { %>
+                <a href="/Pokemon/<%- latestPokemon.basic.name %>" class="col text-center region__link">
+                    <div class="region__img shadow">
+                        <img src="/PokemonImages/<%- latestPokemon.basic.image %>" width="220" height="200"  alt=<%- latestPokemon.basic.name %> loading="lazy">
+                    </div>
+                    <div class="pt-1">#<%- latestPokemon.basic.pokedexNumber %> <%- latestPokemon.basic.name %></div>
+                </a>
+            <% }) %>
+        <% } %>
+    </div>
+</section>
+<!-- Lastest End -->
+
+<!-- Kanto Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Kanto Pokemon</h2>
+        <a href="/region/Kanto" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof regionPokemon.kantoPokemon !== 'undefined' && regionPokemon.kantoPokemon.length > 0) { %>
+            <% regionPokemon.kantoPokemon.forEach(function(pokemon, index) { %>
+                <a href="/Pokemon/<%- pokemon.basic.name %>" class="col text-center region__link">
+                    <div class="region__img shadow">
+                        <img src="/PokemonImages/<%- pokemon.basic.image %>" width="220" height="200"  alt=<%- pokemon.basic.name %> loading="lazy">
+                    </div>
+                    <div class="pt-1">#<%- pokemon.basic.pokedexNumber %> <%- pokemon.basic.name %></div>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>No Pokemon Found</p>
+        <% } %>
+    </div>
+</section>
+<!-- Kanto End -->
+
+<!-- Johto Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Johto Pokemon</h2>
+        <a href="/region/Johto" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof regionPokemon.johtoPokemon !== 'undefined' && regionPokemon.johtoPokemon.length > 0) { %>
+            <% regionPokemon.johtoPokemon.forEach(function(pokemon, index) { %>
+                <a href="/Pokemon/<%- pokemon.basic.name %>" class="col text-center region__link">
+                    <div class="region__img shadow">
+                        <img src="/PokemonImages/<%- pokemon.basic.image %>" width="220" height="200"  alt=<%- pokemon.basic.name %> loading="lazy">
+                    </div>
+                    <div class="pt-1">#<%- pokemon.basic.pokedexNumber %> <%- pokemon.basic.name %></div>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>No Pokemon Found</p>
+        <% } %>
+    </div>
+</section>
+<!-- Johto End -->
+
+<!-- Hoenn Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Hoenn Pokemon</h2>
+        <a href="/region/Hoenn" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof regionPokemon.hoennPokemon !== 'undefined' && regionPokemon.hoennPokemon.length > 0) { %>
+            <% regionPokemon.hoennPokemon.forEach(function(pokemon, index) { %>
+                <a href="/Pokemon/<%- pokemon.basic.name %>" class="col text-center region__link">
+                    <div class="region__img shadow">
+                        <img src="/PokemonImages/<%- pokemon.basic.image %>" width="220" height="200"  alt=<%- pokemon.basic.name %> loading="lazy">
+                    </div>
+                    <div class="pt-1">#<%- pokemon.basic.pokedexNumber %> <%- pokemon.basic.name %></div>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>No Pokemon Found</p>
+        <% } %>
+    </div>
+</section>
+<!-- Hoenn End -->
+
+<!-- Sinnoh Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Sinnoh Pokemon</h2>
+        <a href="/region/Sinnoh" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof regionPokemon.sinnohPokemon !== 'undefined' && regionPokemon.sinnohPokemon.length > 0) { %>
+            <% regionPokemon.sinnohPokemon.forEach(function(pokemon, index) { %>
+                <a href="/Pokemon/<%- pokemon.basic.name %>" class="col text-center region__link">
+                    <div class="region__img shadow">
+                        <img src="/PokemonImages/<%- pokemon.basic.image %>" width="220" height="200"  alt=<%- pokemon.basic.name %> loading="lazy">
+                    </div>
+                    <div class="pt-1">#<%- pokemon.basic.pokedexNumber %> <%- pokemon.basic.name %></div>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>No Pokemon Found</p>
+        <% } %>
+    </div>
+</section>
+<!-- Sinnoh End -->
+
+<!-- Unova Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Unova Pokemon</h2>
+        <a href="/region/Unova" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof regionPokemon.unovaPokemon !== 'undefined' && regionPokemon.unovaPokemon.length > 0) { %>
+            <% regionPokemon.unovaPokemon.forEach(function(pokemon, index) { %>
+                <a href="/Pokemon/<%- pokemon.basic.name %>" class="col text-center region__link">
+                    <div class="region__img shadow">
+                        <img src="/PokemonImages/<%- pokemon.basic.image %>" width="220" height="200"  alt=<%- pokemon.basic.name %> loading="lazy">
+                    </div>
+                    <div class="pt-1">#<%- pokemon.basic.pokedexNumber %> <%- pokemon.basic.name %></div>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>No Pokemon Found</p>
+        <% } %>
+    </div>
+</section>
+<!-- Unova End -->
+
+<!-- Kalos Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Kalos Pokemon</h2>
+        <a href="/region/Kalos" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof regionPokemon.kalosPokemon !== 'undefined' && regionPokemon.kalosPokemon.length > 0) { %>
+            <% regionPokemon.kalosPokemon.forEach(function(pokemon, index) { %>
+                <a href="/Pokemon/<%- pokemon.basic.name %>" class="col text-center region__link">
+                    <div class="region__img shadow">
+                        <img src="/PokemonImages/<%- pokemon.basic.image %>" width="220" height="200"  alt=<%- pokemon.basic.name %> loading="lazy">
+                    </div>
+                    <div class="pt-1">#<%- pokemon.basic.pokedexNumber %> <%- pokemon.basic.name %></div>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>No Pokemon Found</p>
+        <% } %>
+    </div>
+</section>
+<!-- Kalos End -->
+
+<!-- Alola Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Alola Pokemon</h2>
+        <a href="/region/Alola" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof regionPokemon.alolaPokemon !== 'undefined' && regionPokemon.alolaPokemon.length > 0) { %>
+            <% regionPokemon.alolaPokemon.forEach(function(pokemon, index) { %>
+                <a href="/Pokemon/<%- pokemon.basic.name %>" class="col text-center region__link">
+                    <div class="region__img shadow">
+                        <img src="/PokemonImages/<%- pokemon.basic.image %>" width="220" height="200"  alt=<%- pokemon.basic.name %> loading="lazy">
+                    </div>
+                    <div class="pt-1">#<%- pokemon.basic.pokedexNumber %> <%- pokemon.basic.name %></div>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>No Pokemon Found</p>
+        <% } %>
+    </div>
+</section>
+<!-- Alola End -->
+
+<!-- Galar Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Galar Pokemon</h2>
+        <a href="/region/Galar" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof regionPokemon.galarPokemon !== 'undefined' && regionPokemon.galarPokemon.length > 0) { %>
+            <% regionPokemon.galarPokemon.forEach(function(pokemon, index) { %>
+                <a href="/Pokemon/<%- pokemon.basic.name %>" class="col text-center region__link">
+                    <div class="region__img shadow">
+                        <img src="/PokemonImages/<%- pokemon.basic.image %>" width="220" height="200"  alt=<%- pokemon.basic.name %> loading="lazy">
+                    </div>
+                    <div class="pt-1">#<%- pokemon.basic.pokedexNumber %> <%- pokemon.basic.name %></div>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>No Pokemon Found</p>
+        <% } %>
+    </div>
+</section>
+<!-- Galar End -->

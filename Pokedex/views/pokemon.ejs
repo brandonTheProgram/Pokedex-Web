@@ -1,0 +1,518 @@
+<% if (pokemon != null) { %>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><%- pokemon.basic.name %>  </li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Display the Pokemon's Image -->
+        <div class="col-12 col-md-4">
+            <img src="/PokemonImages/<%- pokemon.basic.image %>" class="img-fluid sticky-top" style="top: 20px" alt=<%- pokemon.basic.name %> loading="lazy">
+        </div>
+
+        <!-- Display the Pokemon's pokedex num, name, species, and typing -->
+        <div class="col-12 col-md-8">
+            <div class="row">
+              <div class="col-sm">
+                <h3><%- pokemon.basic.pokedexNumber %></h3>
+              </div>
+              <div class="col-sm">
+                <h3><%- pokemon.basic.name %></h3>
+              </div>
+              <div class="col-sm">
+                <h3><%- pokemon.basic.species %></h3>
+              </div>
+              <% if ( pokemon.basic.priType == pokemon.basic.secType) { %> 
+                <div class="col-sm">
+                    <h3><%- pokemon.basic.priType %></h3>
+                </div>
+              <% } else { %>
+                <div class="col-sm">
+                    <h3><%- pokemon.basic.priType %></h3>
+                  </div>
+                  <div class="col-sm">
+                    <h3><%- pokemon.basic.secType %></h3>
+                  </div>
+              <% } %> 
+            </div>
+        </div>
+
+        <!-- Display the Pokemon's description -->
+        <div class="row"><%- pokemon.basic.description  %></div>
+
+        <p></p>
+
+        <!-- Display the Pokemon's abilities -->
+        <div class="container">
+            <h3>Abilities</h3>
+            <div class="row">
+                <%- pokemon.basic.ability %>: <%- pokemon.basic.abilityDesc %>
+            </div>
+            <% if (pokemon.basic.abilities == 3) { %>
+                <div class="row">
+                    <%- pokemon.basic.altAbility %>: <%- pokemon.basic.altAbilityDesc %>
+                </div>
+            <% } %>
+            <% if (pokemon.basic.abilities > 1) { %>
+                <div class="row">
+                    (Hidden) <%- pokemon.basic.hiddenAbility %>: <%- pokemon.basic.hiddenAbilityDesc %>
+                </div> 
+            <% } %>
+        </div>
+
+        <p></p>
+
+        <!-- Display the Pokemon's Weakness -->
+        <div class="container">
+            <h3>Weakness</h3>
+            <div class="row">
+                <div class="col-sm" align="center">
+                    Normal
+                </div>
+                <div class="col-sm" align="center">
+                    Fighting
+                </div>
+                <div class="col-sm" align="center">
+                    Flying
+                </div>
+                <div class="col-sm" align="center">
+                    Poison
+                </div>
+                <div class="col-sm" align="center">
+                    Ground
+                </div>
+                <div class="col-sm" align="center">
+                    Rock
+                </div>
+                <div class="col-sm" align="center">
+                    Bug
+                </div>
+                <div class="col-sm" align="center">
+                    Ghost
+                </div>
+                <div class="col-sm" align="center">
+                    Steel
+                </div>
+                <div class="col-sm" align="center">
+                    Fire
+                </div>
+                <div class="col-sm" align="center">
+                    Water
+                </div>
+                <div class="col-sm" align="center">
+                    Grass
+                </div>
+                <div class="col-sm" align="center">
+                    Electric
+                </div>
+                <div class="col-sm" align="center">
+                    Psychic
+                </div>
+                <div class="col-sm" align="center">
+                    Ice
+                </div>
+                <div class="col-sm" align="center">
+                    Dragon
+                </div>
+                <div class="col-sm" align="center">
+                    Dark
+                </div>
+                <div class="col-sm" align="center">
+                    Fairy
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm" align="center">
+                    *<%- weakness.NormalDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.FightingDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.FlyingDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.PoisonDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.GroundDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.RockDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.BugDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.GhostDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.SteelDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.FireDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.WaterDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.GrassDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.ElectricDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.PsychicDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.IceDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.DragonDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.DarkDmg %>
+                </div>
+                <div class="col-sm" align="center">
+                    *<%- weakness.FairyDmg %>
+                </div>
+            </div>
+        </div>
+
+        <p></p>
+
+        <!-- Display the Pokemon's Normal Evolutions-->
+        <% if(specialBranch === undefined) { %>
+            <div class="container">
+                <h3>Evolutions</h3>
+                <div class="row row-cols-auto align-items-center justify-content-center">
+                    <a href="/Pokemon/<%- evos.firstEvo.basic.name %>" class="col text-center region__link">
+                        <div class="region__img shadow">
+                            <img src="/PokemonImages/<%- evos.firstEvo.basic.image %>" width="50" height="200"  alt=<%- evos.firstEvo.basic.name %> loading="lazy">
+                        </div>
+                    </a>
+                    <% if (evos.secondEvo != null) { %>
+                        <a href="/Pokemon/<%- evos.secondEvo.basic.name %>" class="col text-center region__link">
+                            <div class="region__img shadow">
+                                <img src="/PokemonImages/<%- evos.secondEvo.basic.image %>" width="50" height="200"  alt=<%- evos.secondEvo.basic.name %> loading="lazy">
+                            </div>
+                        </a>
+                    <% } %>
+                    <% if (evos.finalEvo != null) { %>
+                        <a href="/Pokemon/<%- evos.finalEvo.basic.name %>" class="col text-center region__link">
+                            <div class="region__img shadow">
+                                <img src="/PokemonImages/<%- evos.finalEvo.basic.image %>" width="50" height="200"  alt=<%- evos.finalEvo.basic.name %> loading="lazy">
+                            </div>
+                        </a>
+                    <% } %>  
+                    <% if (evos.branchEvo != null) { %>
+                        <a href="/Pokemon/<%- evos.branchEvo.basic.name %>" class="col text-center region__link">
+                            <div class="region__img shadow">
+                                <img src="/PokemonImages/<%- evos.branchEvo.basic.image %>" width="50" height="200"  alt=<%- evos.branchEvo.basic.name %> loading="lazy">
+                            </div>
+                        </a>
+                    <% } %>
+                </div>
+    
+                <!-- Display the Pokemon's Normal Evolution Conditions -->
+                <div class="row row-cols-auto align-items-center justify-content-center">
+                    <% if (evos.finalEvo != null && evos.secondEvo == null) { %>
+                        <% if (evos.firstEvo.evolutions.evoThroughLvl && !evos.firstEvo.evolutions.evoThroughCond) { %>
+                            <%- evos.firstEvo.basic.name%> evolves into <%- evos.finalEvo.basic.name%> at level <%- evos.firstEvo.evolutions.evoLevel %>.
+                        <% } else { %>
+                            <%- evos.firstEvo.basic.name%> evolves into <%- evos.finalEvo.basic.name%> by <%- evos.firstEvo.evolutions.finalEvoCond %>.
+                        <% } %>
+                        <% if (pokemon.evolutions.hasBranchEvo) { %>
+                            <%- evos.firstEvo.basic.name%> has a brach evolution into <%- evos.branchEvo.basic.name%> by <%- evos.branchEvo.evolutions.finalEvoCond %>.
+                        <% } %>
+                    <% } else if (evos.finalEvo != null && evos.secondEvo != null) { %>
+                        <% if (evos.firstEvo.evolutions.evoThroughLvl && !evos.firstEvo.evolutions.evoThroughCond) { %>
+                            <%- evos.firstEvo.basic.name%> evolves into <%- evos.secondEvo.basic.name%> at level <%- evos.firstEvo.evolutions.evoLevel %>
+                        <% } else { %>
+                            <%- evos.firstEvo.basic.name%> evolves into <%- evos.secondEvo.basic.name%> by <%- evos.firstEvo.evolutions.secondEvoCond %>
+                        <% } %>
+                        than 
+                        <% if (evos.secondEvo.evolutions.evoThroughLvl && !evos.secondEvo.evolutions.evoThroughCond) { %>
+                            <%- evos.secondEvo.basic.name%> evolves into <%- evos.finalEvo.basic.name%> at level <%- evos.secondEvo.evolutions.evoLevel %>.
+                        <% } else { %>
+                            <%- evos.secondEvo.basic.name%> evolves into <%- evos.finalEvo.basic.name%> by <%- evos.secondEvo.evolutions.finalEvoCond %>.
+                        <% } %>
+                        <% if (evos.branchEvo != null) { %>
+                            <%- evos.secondEvo.basic.name%> has a brach evolution into <%- evos.branchEvo.basic.name%> by <%- evos.branchEvo.evolutions.finalEvoCond %>.
+                        <% } %>
+                    <% } %>
+                </div>
+    
+                <!-- Display the Pokemon's Alolan Evolutions-->
+                <% if(regionalForms !== undefined && regionalForms.alolanForms == true) { %>
+                    <h4>Alolan Forms</h4>
+                    <div class="row row-cols-auto align-items-center justify-content-center">
+                        <% if(regionalForms.alolanFirstEvo != null) { %>
+                            <a href="/Pokemon/<%- regionalForms.alolanFirstEvo.basic.name %>" class="col text-center region__link">
+                                <div class="region__img shadow">
+                                    <img src="/PokemonImages/<%- regionalForms.alolanFirstEvo.basic.image %>" width="50" height="200"  alt=<%- regionalForms.alolanFirstEvo.basic.name %> loading="lazy">
+                                </div>
+                            </a>
+                        <% } %>
+                        <% if(regionalForms.alolanSecondEvo != null) { %>
+                            <a href="/Pokemon/<%- regionalForms.alolanSecondEvo.basic.name %>" class="col text-center region__link">
+                                <div class="region__img shadow">
+                                    <img src="/PokemonImages/<%- regionalForms.alolanSecondEvo.basic.image %>" width="50" height="200"  alt=<%- regionalForms.alolanSecondEvo.basic.name %> loading="lazy">
+                                </div>
+                            </a>
+                        <% } %>
+                        <% if(regionalForms.alolanFinalEvo != null) { %>
+                            <a href="/Pokemon/<%- regionalForms.alolanFinalEvo.basic.name %>" class="col text-center region__link">
+                                <div class="region__img shadow">
+                                    <img src="/PokemonImages/<%- regionalForms.alolanFinalEvo.basic.image %>" width="50" height="200"  alt=<%- regionalForms.alolanFinalEvo.basic.name %> loading="lazy">
+                                </div>
+                            </a>
+                        <% } %>
+                        <% if(regionalForms.alolanBranchEvo != null) { %>
+                            <a href="/Pokemon/<%- regionalForms.alolanBranchEvo.basic.name %>" class="col text-center region__link">
+                                <div class="region__img shadow">
+                                    <img src="/PokemonImages/<%- regionalForms.alolanBranchEvo.basic.image %>" width="50" height="200"  alt=<%- regionalForms.alolanBranchEvo.basic.name %> loading="lazy">
+                                </div>
+                            </a>
+                        <% } %>
+                    </div>
+                    <!-- Display the Pokemon's Alolan Evolution Conditions -->
+                    <div class="row row-cols-auto align-items-center justify-content-center">
+                        <!-- If both the first and final evolutions are Alolan -->
+                        <% if(regionalForms.alolanFinalEvo != null && regionalForms.alolanFirstEvo != null && regionalForms.alolanSecondEvo == null) { %>
+                            <% if (regionalForms.alolanFirstEvo.evolutions.evoThroughLvl && !regionalForms.alolanFirstEvo.evolutions.evoThroughCond) { %>
+                                <%- regionalForms.alolanFirstEvo.basic.name%> evolves into <%- regionalForms.alolanFinalEvo.basic.name%> at level <%- regionalForms.alolanFirstEvo.evolutions.evoLevel %>.
+                            <% } else { %>
+                                <%- regionalForms.alolanFirstEvo.basic.name%> evolves into <%- regionalForms.alolanFinalEvo.basic.name%> by <%- regionalForms.alolanFirstEvo.evolutions.finalEvoCond %>.
+                            <% } %>
+                        <!-- If 3 all evolutions are Alolan -->
+                        <% } else { %>                 
+                            <% if (regionalForms.alolanFirstEvo.evolutions.evoThroughLvl && !regionalForms.alolanFirstEvo.evolutions.evoThroughCond) { %>
+                                <%- regionalForms.alolanFirstEvo.basic.name%> evolves into <%- regionalForms.alolanSecondEvo.basic.name%> at level <%- regionalForms.alolanFirstEvo.evolutions.evoLevel %>
+                            <% } else { %>
+                                <%- regionalForms.alolanFirstEvo.basic.name%> evolves into <%- regionalForms.alolanSecondEvo.basic.name%> by <%- regionalForms.alolanFirstEvo.evolutions.secondEvoCond %>
+                            <% } %>
+                            than 
+                            <% if (regionalForms.alolanSecondEvo.evolutions.evoThroughLvl && !regionalForms.alolanSecondEvo.evolutions.evoThroughCond) { %>
+                                <%- regionalForms.alolanSecondEvo.basic.name%> evolves into <%- regionalForms.alolanFinalEvo.basic.name%> at level <%- regionalForms.alolanSecondEvo.evolutions.evoLevel %>.
+                            <% } else { %>
+                                <%- regionalForms.alolanSecondEvo.basic.name%> evolves into <%- regionalForms.alolanFinalEvo.basic.name%> by <%- regionalForms.alolanSecondEvo.evolutions.finalEvoCond %>.
+                            <% } %>
+                        <% } %>
+                    </div>
+                <% } %>
+    
+                <!-- Display the Pokemon's Galarian Evolutions-->
+                <% if(regionalForms !== undefined && regionalForms.galarianForms == true) { %>
+                    <h4>Galarian Forms</h4>
+                    <div class="row row-cols-auto align-items-center justify-content-center">
+                        <% if(regionalForms.galarianFirstEvo != null) { %>
+                            <a href="/Pokemon/<%- regionalForms.galarianFirstEvo.basic.name %>" class="col text-center region__link">
+                                <div class="region__img shadow">
+                                    <img src="/PokemonImages/<%- regionalForms.galarianFirstEvo.basic.image %>" width="50" height="200"  alt=<%- regionalForms.galarianFirstEvo.basic.name %> loading="lazy">
+                                </div>
+                            </a>
+                        <% } %>
+                        <% if(regionalForms.galarianSecondEvo != null) { %>
+                            <a href="/Pokemon/<%- regionalForms.galarianSecondEvo.basic.name %>" class="col text-center region__link">
+                                <div class="region__img shadow">
+                                    <img src="/PokemonImages/<%- regionalForms.galarianSecondEvo.basic.image %>" width="50" height="200"  alt=<%- regionalForms.galarianSecondEvo.basic.name %> loading="lazy">
+                                </div>
+                            </a>
+                        <% } %>
+                        <% if(regionalForms.galarianFinalEvo != null) { %>
+                            <a href="/Pokemon/<%- regionalForms.galarianFinalEvo.basic.name %>" class="col text-center region__link">
+                                <div class="region__img shadow">
+                                    <img src="/PokemonImages/<%- regionalForms.galarianFinalEvo.basic.image %>" width="50" height="200"  alt=<%- regionalForms.galarianFinalEvo.basic.name %> loading="lazy">
+                                </div>
+                            </a>
+                        <% } %>
+                        <% if(regionalForms.galarianBranchEvo != null) { %>
+                            <a href="/Pokemon/<%- regionalForms.galarianBranchEvo.basic.name %>" class="col text-center region__link">
+                                <div class="region__img shadow">
+                                    <img src="/PokemonImages/<%- regionalForms.galarianBranchEvo.basic.image %>" width="50" height="200"  alt=<%- regionalForms.galarianBranchEvo.basic.name %> loading="lazy">
+                                </div>
+                            </a>
+                        <% } %>
+                    </div>
+                    <!-- Display the Pokemon's Galarian Evolutions Data-->
+                    <div class="row row-cols-auto align-items-center justify-content-center">
+                        <!-- If the there are two galarian forms-->
+                        <% if(regionalForms.galarianFirstEvo != null && regionalForms.galarianFinalEvo != null && regionalForms.galarianSecondEvo == null) { %>
+                            <% if (regionalForms.galarianFirstEvo.evolutions.evoThroughLvl && !regionalForms.galarianFirstEvo.evolutions.evoThroughCond) { %>
+                                <%- regionalForms.galarianFirstEvo.basic.name%> evolves into <%- regionalForms.galarianFinalEvo.basic.name%> at level <%- regionalForms.galarianFirstEvo.evolutions.evoLevel %>.
+                            <% } else { %>
+                                <%- regionalForms.galarianFirstEvo.basic.name%> evolves into <%- regionalForms.galarianFinalEvo.basic.name%> by <%- regionalForms.galarianFirstEvo.evolutions.finalEvoCond %>.
+                            <% } %>
+                            <% if (regionalForms.galarianBranchEvo != null) { %>
+                                <%- regionalForms.galarianFirstEvo.basic.name%> has a brach evolution into <%- regionalForms.galarianBranchEvo.basic.name%> by <%- regionalForms.galarianBranchEvo.evolutions.finalEvoCond %>.
+                            <% } %> 
+                        <!-- If there are three galarian forms-->
+                        <% } else if(regionalForms.galarianFirstEvo != null && regionalForms.galarianFinalEvo != null && regionalForms.galarianSecondEvo != null) { %> 
+                            <% if (regionalForms.galarianFirstEvo.evolutions.evoThroughLvl && !regionalForms.galarianFirstEvo.evolutions.evoThroughCond) { %>
+                                <%- regionalForms.galarianFirstEvo.basic.name%> evolves into <%- regionalForms.galarianSecondEvo.basic.name%> at level <%- regionalForms.galarianFirstEvo.evolutions.evoLevel %>
+                            <% } else { %>
+                                <%- regionalForms.galarianFirstEvo.basic.name%> evolves into <%- regionalForms.galarianSecondEvo.basic.name%> by <%- regionalForms.galarianSecondEvo.evolutions.secondEvoCond %>
+                            <% } %>
+                            than 
+                            <% if (regionalForms.galarianSecondEvo.evolutions.evoThroughLvl && !regionalForms.galarianSecondEvo.evolutions.evoThroughCond) { %>
+                                <%- regionalForms.galarianSecondEvo.basic.name%> evolves into <%- regionalForms.galarianFinalEvo.basic.name%> at level <%- regionalForms.galarianSecondEvo.evolutions.evoLevel %>.
+                            <% } else { %>
+                                <%- regionalForms.galarianSecondEvo.basic.name%> evolves into <%- regionalForms.galarianFinalEvo.basic.name%> by <%- regionalForms.galarianSecondEvo.evolutions.finalEvoCond %>.
+                            <% } %>
+                            <% if (regionalForms.galarianBranchEvo != null) { %>
+                                <%- regionalForms.galarianSecondEvo.basic.name%> has a brach evolution into <%- regionalForms.galarianBranchEvo.basic.name%> by <%- regionalForms.galarianBranchEvo.evolutions.finalEvoCond %>.
+                            <% } %>
+                        <% } %> 
+                    </div>
+                <% } %>
+            </div>
+        <!-- Display the Pokemon's special branch Evolutions-->
+        <% } else { %>
+            <div class="container">
+                <h3>Evolutions</h3>
+                <div class="row row-cols-auto align-items-center justify-content-center">
+                    <% specialBranch.specialBrachEvos.forEach(function(branchEvo) {  %>
+                        <a href="/Pokemon/<%- branchEvo.basic.name %>" class="col text-center region__link">
+                            <div class="region__img shadow">
+                                <img src="/PokemonImages/<%- branchEvo.basic.image %>" width="50" height="200"  alt=<%- branchEvo.basic.name %> loading="lazy">
+                            </div>
+                        </a> 
+                    <% }) %>
+                </div>
+                <!-- Display the Pokemon's special branch Evolution Conditions -->
+                <div class="row row-cols-auto align-items-center justify-content-center">
+                    <% if(specialBranch.isEevee || specialBranch.isTyrogue) { %>
+                        <% for(let i = 1; i < specialBranch.specialBrachEvos.length; i++) { %>
+                            <%- specialBranch.specialBrachEvos[0].basic.name %> evolves into <%- specialBranch.specialBrachEvos[i].basic.name%> by <%- specialBranch.specialBrachEvos[i].evolutions.finalEvoCond %>.<br>
+                        <% } %>
+                    <% } else if(specialBranch.isWurmple) { %>
+                        <%- specialBranch.specialBrachEvos[0].basic.name %> evolves into <%- specialBranch.specialBrachEvos[1].basic.name%> at level <%- specialBranch.specialBrachEvos[0].evolutions.evoLevel %> than <%- specialBranch.specialBrachEvos[1].basic.name %> evolves into <%- specialBranch.specialBrachEvos[2].basic.name%> at level <%- specialBranch.specialBrachEvos[1].evolutions.evoLevel %>.<br>
+                        <%- specialBranch.specialBrachEvos[0].basic.name %> evolves into <%- specialBranch.specialBrachEvos[3].basic.name%> at level <%- specialBranch.specialBrachEvos[0].evolutions.evoLevel %> than <%- specialBranch.specialBrachEvos[3].basic.name %> evolves into <%- specialBranch.specialBrachEvos[4].basic.name%> at level <%- specialBranch.specialBrachEvos[3].evolutions.evoLevel %>.
+                    <% } %> 
+                </div>
+            </div>
+        <% } %> 
+
+        <p></p>
+
+        <!-- Display the Pokemon's Locations -->
+        <div class="row pt-4">
+            <div class="col-12">
+                <h4>Locations</h4>
+                <ul class="list-group list-group-flush">
+                    <% pokemon.locations.forEach(function(location, index) { %>
+                        <li class="list-group-item"><b><%- location.game %></b>: <%- location.location %></li>
+                    <% }) %> 
+                </ul>
+            </div>
+        </div>
+
+        <p></p>
+
+        <!-- Display the Pokemon's Moves -->
+        <div class="row pt-4">
+            <div class="col-12">
+                <% attackList.forEach(function(attack) { %>
+                    <h2><%- attack.game %> </h2>
+                    <h4>Standard Level Up</h4>
+                    <table style="width:100%">
+                        <tr>
+                            <th>Level</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Power</th>
+                            <th>Accuracy</th>
+                            <th>PP</th>
+                            <th>Effect Rate %</th>
+                        </tr>
+                        <% attack.attacks.forEach(function(move, index) { %>
+                            <tr>
+                                <td><%- attack.levels[index]%></td>
+                                <td><%- move.name%></td>
+                                <td><%- move.type%></td>
+                                <td><%- move.category%></td>
+                                <td><%- move.power%></td>
+                                <td><%- move.accuracy%></td>
+                                <td><%- move.pp%></td>
+                                <td><%- move.effectRate%></td>
+                            </tr>
+                            </tr>
+                                <th>Description:</th>
+                                <td colspan="7"><%- move.description%></td>
+                            </tr>
+                        <% }) %>
+                    </table>
+                    <% if (attack.tmAttacks.length > 0) { %>
+                        <h4>TM Moves</h4>
+                        <table style="width:100%">
+                            <tr>
+                            <th>TM#</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Power</th>
+                            <th>Accuracy</th>
+                            <th>PP</th>
+                            <th>Effect Rate %</th>
+                            </tr>
+                            <% attack.tmAttacks.forEach(function(move, index) { %>
+                                <tr>
+                                    <td>TM<%- attack.tmList[index]%></td>
+                                    <td><%- move.name%></td>
+                                    <td><%- move.type%></td>
+                                    <td><%- move.category%></td>
+                                    <td><%- move.power%></td>
+                                    <td><%- move.accuracy%></td>
+                                    <td><%- move.pp%></td>
+                                    <td><%- move.effectRate%></td>
+                                </tr>
+                                </tr>
+                                    <th>Description:</th>
+                                    <td colspan="7"><%- move.description%></td>
+                                </tr>
+                            <% }) %>
+                        </table>
+                    <% } %>
+                    <% if (attack.trAttacks.length > 0) { %>
+                        <h4>TR Moves</h4>
+                        <table style="width:100%">
+                            <tr>
+                            <th>TR#</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Power</th>
+                            <th>Accuracy</th>
+                            <th>PP</th>
+                            <th>Effect Rate %</th>
+                            </tr>
+                            <% attack.trAttacks.forEach(function(move, index) { %>
+                                <tr>
+                                    <td>TR<%- attack.trList[index]%></td>
+                                    <td><%- move.name%></td>
+                                    <td><%- move.type%></td>
+                                    <td><%- move.category%></td>
+                                    <td><%- move.power%></td>
+                                    <td><%- move.accuracy%></td>
+                                    <td><%- move.pp%></td>
+                                    <td><%- move.effectRate%></td>
+                                </tr>
+                                </tr>
+                                    <th>Description:</th>
+                                    <td colspan="7"><%- move.description%></td>
+                                </tr>
+                            <% }) %>
+                        </table>
+                    <% } %>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+<% } else { %> 
+    <p>No Pokemon Found</p>
+<% } %> 
